@@ -1,5 +1,5 @@
 @extends('plantilla')
-@section('tituloPagina', 'Crud con Laravel 8')
+@section('tituloPagina', ' Laravel 8')
 
 @section('contenido')
 

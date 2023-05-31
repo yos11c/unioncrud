@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Transporte extends Model
 {
     use HasFactory;
+    protected $table='transportes';
     public function camiones(){
-        return $this->hasMany('App\Models\Camion');
+        return $this->hasMany('App\Models\camion');
     }
+
 }

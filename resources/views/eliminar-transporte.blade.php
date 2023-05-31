@@ -1,4 +1,4 @@
-@extends('transporte')
+@extends('plantilla')
 
 @section("tituloPagina", "eliminar un registro")
 
@@ -28,7 +28,7 @@
                     </tbody>
                 </table>
                 <hr>
-                <form id="myButton" action="{{ route('transportes.destroyt', $transportes->id) }}" method="POST">
+                <form  id="myButton"  action="{{ route('transportes.destroyt', $transportes->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <a href="{{ route("transportes.indext") }}" class="btn btn-info">
@@ -46,6 +46,7 @@
     </div>
 
 @endsection
+{{--se hace la conexion con js--}}
 
 @section ('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

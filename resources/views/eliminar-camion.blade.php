@@ -1,4 +1,4 @@
-@extends('camion')
+@extends('plantilla')
 
 @section("tituloPagina", "eliminar un registro")
 
@@ -34,7 +34,7 @@
                     </tbody>
                 </table>
                 <hr>
-                <form id="myButton" action="{{ route('camiones.destroyc', $camiones->id) }}" method="POST">
+                <form  id="myButton" action="{{ route('camiones.destroyc', $camiones->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <a href="{{ route("camiones.indexc") }}" class="btn btn-info">
@@ -52,6 +52,7 @@
     </div>
 
 @endsection
+{{--se hace la conexion con js--}}
 
 @section ('js')
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -67,13 +68,13 @@
             $('#myButton').click(function(event) {
                 event.preventDefault();
                 Swal.fire({
-                    title: 'Are you sure? :(',
+                    title: 'Are you sure?',
                     text: "You won't be able to revert this!",
-                    icon: 'warning!!',
+                    icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it! :)'
+                    confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
                         // Swal.fire(

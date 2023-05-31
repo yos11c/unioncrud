@@ -32,26 +32,26 @@ class CamionController extends Controller
     {
         try {
             $validateData =validator::make ($request->all(),[
-                'id' => 'required|integer',
-                'placa_camion' => 'required|string',
-                'marca' => 'required|string ',
-                'color' => 'required|string',
-                'modelo ' => 'required|string',
-                'capacidad_toneladas ' => 'required|string ',
-                'transporte_codigo' => 'required|exists:transportes.id',
+
+                'placa_camion' => 'string',
+                'marca' => 'string ',
+                'color' => 'string',
+                'modelo' => 'string',
+                'capacidad_toneladas' => 'required|string ',
+                'transporte_codigo' => 'required',
 
 
             ])->safe()->all();
 
             //Sirve para guardar datos en la base de datos
             $camiones = new Camion();
-            $camiones->id = $validateData['id'];
+
             $camiones->placa_camion = $validateData['placa_camion'];
             $camiones->marca = $validateData['marca'];
             $camiones->color = $validateData['color'];
             $camiones->modelo = $validateData['modelo'];
             $camiones->capacidad_toneladas = $validateData['capacidad_toneladas'];
-            $camiones->transporte_codigo = $validateData['transportes_codigo'];
+            $camiones->transporte_codigo = $validateData['transporte_codigo'];
             $camiones->save();
 
             return redirect()->back()->with('success', ' creada correctamente');
@@ -63,11 +63,11 @@ class CamionController extends Controller
                 // Otro error de clave foránea o error de base de datos
                 return redirect()->back()->with('error', 'error de base de datos : ' . $e->getMessage());
             }
-        } catch (\Exception $e) {
-            // Capturar excepción general
-            // Manejar cualquier otro tipo de excepción que pueda ocurrir
-            return redirect()->back()->with('error', 'Error de otro tipo fuera del crud publicación: ' . $e->getMessage());
-        }
+        } //catch (\Exception $e) {
+        // Capturar excepción general
+        // Manejar cualquier otro tipo de excepción que pueda ocurrir
+        //return redirect()->back()->with('error', 'Error de otro tipo fuera del crud publicación: ' . $e->getMessage());
+        // }
     }
 
 

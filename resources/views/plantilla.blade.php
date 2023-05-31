@@ -23,6 +23,8 @@
         <li><a class="dropdown-item" href="{{ route("transportes.indext") }}">Transportes</a></li>
         <li><a class="dropdown-item" href="{{ route("camiones.indexc") }}">Camiones</a></li>
         <li><a class="dropdown-item" href="{{ route("personas.index") }}">Personas</a></li>
+        <li><a class="dropdown-item" href="{{ route("error.indexe") }}">Transportes</a></li>
+
     </ul>
 </div>
 <div>
@@ -32,6 +34,11 @@
     <a href="{{ route("camiones.indexc") }}" class="btn btn-primary">
         <span class="fas fa-user-plus"></span>  Camiones
     </a>
+    </a>
+    <a href="{{ route("error.indexe") }}" class="btn btn-primary">
+        <span class="fas fa-user-plus"></span>  error
+    </a>
+
     {{--    <a href="{{ route("layout/plantilla") }}" class="btn btn-info">--}}
     {{--        <span class="fas fa-undo-alt"></span> Regresar--}}
     {{--    </a>--}}
@@ -58,6 +65,9 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 -->
+<script src="{{asset('js/app.js')}}"></script>
+
+@yield('js')
+{{--//definiendo un container es decir un espacio dentro de la aplicacion js--}}
 </body>
 </html>
-
